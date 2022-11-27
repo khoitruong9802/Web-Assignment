@@ -33,6 +33,8 @@ function addAction() {
 		// xử lý ảnh
 		$target_dir = "public/uploads/";
 		$target_file = $target_dir . basename($_FILES["image"]["name"]);
+		$target_dir_web_uploads = "../public/uploads/";
+		$target_file_web_uploads = $target_dir_web_uploads . basename($_FILES["image"]["name"]);
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -57,7 +59,9 @@ function addAction() {
 		if ($uploadOk == 0) {
 		} else {
 		  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-		    $image = $target_dir. basename( $_FILES["image"]["name"]);
+			if (copy($target_file, $target_file_web_uploads)) {
+				$image = $target_dir. basename( $_FILES["image"]["name"]);
+			}
 		  } 
 		}
 		if(empty($image)){
