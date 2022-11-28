@@ -1,5 +1,5 @@
 /*HEADER*/
-#head-top{ background: #2d6a4f;} /*26afd9*/
+#head-top{ background: rgb(208, 1, 27);} /*26afd9*/
 #head-top #main-menu li{ float: left;}
 #head-top #payment-link{
     position: relative;
@@ -19,7 +19,7 @@
     padding: 10px 10px;
 }
 #head-top #main-menu li:last-child a{ padding-right: 0!important;}
-#head-body{ background: #52b788;}
+#head-body{ background: rgb(237, 72, 72);}
 #head-body #logo{
     display: block;
     text-transform: uppercase;

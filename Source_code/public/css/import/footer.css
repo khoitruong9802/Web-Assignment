@@ -1,6 +1,6 @@
 /*FOOTER*/
 #footer-wp #foot-body{ 
-    background-color: #52b788;
+    background-color: rgb(208, 1, 27);
     color: white;
     padding: 50px 0px;}
 #footer-wp #foot-body .block{ float: left; width: 25%; padding-left: 30px;}
@@ -53,7 +53,7 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: #da1818;
+    background: #ffffff;
     transform: translateY(-50%);
 }
 #form-reg #email{
@@ -66,7 +66,7 @@
 #form-reg #sm-reg{
     display: block;
     width: 100%;
-    background: #da1818;
+    background: #185fda;
     border: none;
     outline: none;
     padding: 10px 0px;
@@ -75,7 +75,7 @@
     font-family: 'Roboto Medium';
     line-height: normal;
 }
-#form-reg #sm-reg:hover{ background: #c10f0f;}
+#form-reg #sm-reg:hover{ background: #0b0daf;}
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #999;
     font-family: 'Roboto Light';
@@ -97,13 +97,14 @@
     font-size: 13px;
 }
 #foot-bot{
-    background: #2d6a4f;
+    background: white;
     text-align: center;
     padding: 10px 0px;
 }
 #foot-bot #copyright{
-    color: #fff;
+    color: rgb(0, 0, 0);
     line-height: normal;
+    font-weight: bold;
     font-family: 'Roboto Light';
 }
 #payment img {
