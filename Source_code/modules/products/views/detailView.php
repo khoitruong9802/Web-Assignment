@@ -82,6 +82,17 @@
                     </ul>
                 </div>
             </div>
+            <div class="section" id="same-category-wp">
+                <div class="section-head">
+                    <h3 class="section-title">Comment</h3>
+                </div>
+                <div>
+                    <form action="">
+                        <input type="text" name="comment" placeholder="Comment vào đây">
+                        <button type="submit" name="btn_comment_submit"> Send</button>
+                    </form>
+                </div>
+            </div>
         </div>
 <?php get_sidebar(); ?>
     </div>
