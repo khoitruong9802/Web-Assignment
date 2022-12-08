@@ -42,13 +42,15 @@ function detailAction() {
 	$j = $i;
 	$i = 0;
 	$comment_data = array();
-	while ($comment[$i]['refer'] == -1) {
-		$comment_data[] = $comment[$i];
-		while ($j < $len && $comment[$j]['refer'] == $comment[$i]['id']) {
-			$comment_data[] = $comment[$j];
-			$j++;
+	if ($i != 0) {
+		while ($comment[$i]['refer'] == -1) {
+			$comment_data[] = $comment[$i];
+			while ($j < $len && $comment[$j]['refer'] == $comment[$i]['id']) {
+				$comment_data[] = $comment[$j];
+				$j++;
+			}
+			$i++;
 		}
-		$i++;
 	}
 	
 	$data = [$name, $res, $same_cat, $comment_data];
