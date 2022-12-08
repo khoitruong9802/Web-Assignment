@@ -11,7 +11,11 @@ function construct() {
 function indexAction(){
 
 	if(isset($_GET['report']))
-		echo " <script type='text/javascript'> alert('Bạn cần đăng nhập để mua hàng');</script>";
+		if ($_GET['report'] == 1) {
+			echo " <script type='text/javascript'> alert('Bạn cần đăng nhập để mua hàng');</script>";
+		} else if ($_GET['report'] == 2) {
+			echo " <script type='text/javascript'> alert('Bạn cần đăng nhập để bình luận');</script>";
+		}
 
 	load_view('index');
 }
@@ -76,7 +80,7 @@ function loginAction(){
 
 
 
-function crateAcountAction(){
+function createAccountAction(){
 
 	$username;
 	$password;
@@ -86,7 +90,7 @@ function crateAcountAction(){
 	$address;
 	$err = array();
 
-	if(!empty($_POST['btn_submit_crate'])){
+	if(!empty($_POST['btn_submit_create'])){
 
 		if (!empty($_POST['username'])) {
 			$username = $_POST['username'];
