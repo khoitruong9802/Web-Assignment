@@ -42,8 +42,8 @@ function detailAction() {
 	$j = $i;
 	$i = 0;
 	$comment_data = array();
-	if ($i != 0) {
-		while ($comment[$i]['refer'] == -1) {
+	if ($len != 0) {
+		while ($i < $len && $comment[$i]['refer'] == -1) {
 			$comment_data[] = $comment[$i];
 			while ($j < $len && $comment[$j]['refer'] == $comment[$i]['id']) {
 				$comment_data[] = $comment[$j];
