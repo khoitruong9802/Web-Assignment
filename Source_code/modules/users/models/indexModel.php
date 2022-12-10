@@ -70,11 +70,13 @@ function getUser($username, $password){
 
 
 function logout(){
+	unset($_SESSION['is_login']);
 
-	unset($_SESSION['cart']);
 	unset($_SESSION['id_customer']);
+	unset($_SESSION['username']);
 	unset($_SESSION['fullname']);
-
+	unset($_SESSION['cart']);
+	unset($_SESSION['password']);
 }
 
 

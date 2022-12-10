@@ -78,7 +78,7 @@
                         </li>
                         
                     <?php }; ?>
-                    
+
                     </ul>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                 <div class="section-head">
                     <h3 class="section-title">Bình luận</h3>
                 </div>
-                <form id="comment-section" action="<?php $id = $_GET['id']; if(!empty($_SESSION['id_customer'])) $urlll ="?modules=products&action=addComment&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=2" ;echo $urlll;?>" method="POST">
+                <form id="comment-section" action="<?php $id = $_GET['id']; if(!empty($_SESSION['id_customer']) || isset($_SESSION['is_login'])) $urlll ="?modules=products&action=addComment&id=$id" ;else $urlll ="?modules=users&controllers=index&action=index&report=2" ;echo $urlll;?>" method="POST">
                     <textarea class="form-control" rows="3" name="comment" placeholder="Mời bạn để lại bình luận"></textarea>
                     <button type="submit" class="send-comment-btn">GỬI BÌNH LUẬN</button>
                 </form>
@@ -95,15 +95,22 @@
                 <?php
                 foreach ($data[3] as $value) {
                     $id = $_GET['id']; 
-                    if(!empty($_SESSION['id_customer'])) {
+                    if(!empty($_SESSION['id_customer']) || isset($_SESSION['is_login'])) {
                         $urlll ="?modules=products&action=addComment&id=$id";
                     } else {
                         $urlll ="?modules=users&controllers=index&action=index&report=2";
                     }
                     if ($value['refer'] == -1) {
                 ?>
-                <div class="my-3" id="comment-<?php echo $value['id'] ?>">
-                    <div class="fw-bold"><?php echo $value['fullname'] ?></div>
+                <div class="my-3 <?php if ($value['fullname'] == NULL) {
+                            echo "admin-comment-field";
+                        } else 
+                            echo "comment-field"?>" id="comment-<?php echo $value['id'] ?>">
+                    <div class="fw-bold"><?php if ($value['fullname'] == NULL) {
+                            echo "Admin";
+                        } else {
+                            echo $value['fullname'];
+                        }?></div>
                     <div><?php echo $value['create_date'] ?></div>
                     <div><?php echo $value['comment'] ?></div>
                     <div class="answer-small-btn" id="rep-btn-<?php echo $value['id'] ?>" onclick="display(this)">Trả lời</div>
@@ -116,8 +123,15 @@
                 <?php
                     } else {
                 ?>
-                        <div class="my-3 answer-comment-field ms-4" id="comment-<?php echo $value['id'] ?>">
-                        <div class="fw-bold"><?php echo $value['fullname'] ?></div>
+                        <div class="my-3 ms-4 <?php if ($value['fullname'] == NULL) {
+                            echo "admin-comment-field";
+                        } else 
+                            echo "comment-field"?>" id="comment-<?php echo $value['id'] ?>">
+                        <div class="fw-bold"><?php if ($value['fullname'] == NULL) {
+                            echo "Admin";
+                        } else {
+                            echo $value['fullname'];
+                        }?></div>
                         <div><?php echo $value['create_date'] ?></div>
                         <div><?php echo $value['comment'] ?></div>
                         </div>
@@ -126,8 +140,8 @@
                 }
                 ?>
                 <script>
-                    let start = <?php echo $data[3][0]['id']?>;
-                    let end = <?php echo $data[3][0]['id'] + count($data[3])?>;
+                    let start = <?php echo $data[3][0]['id'] - count($data[3]) + 1?>;
+                    let end = <?php echo $data[3][0]['id'] + 1?>;
                     let display_comment_id = -1;
                     
                     function display(id) {

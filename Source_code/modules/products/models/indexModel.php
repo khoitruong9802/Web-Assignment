@@ -34,9 +34,9 @@ function getAllCommentByIDProduct($id) {
 	`tbl_customer`.`fullname`, 
 	`tbl_comment`.`create_date` 
 	FROM `tbl_comment` 
-	INNER JOIN `tbl_customer` 
+	LEFT JOIN `tbl_customer` 
 	ON `tbl_customer`.`id` = `tbl_comment`.`customer_id` 
-	WHERE `product_id`='$id' ORDER BY refer, `tbl_comment`.`id`");
+	WHERE `product_id`='$id' ORDER BY `refer` ASC, `tbl_comment`.`id` DESC");
 }
 
 function insertComment($product_id, $customer_id, $comment, $create_date, $refer) {

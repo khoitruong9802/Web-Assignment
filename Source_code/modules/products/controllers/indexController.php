@@ -39,15 +39,16 @@ function detailAction() {
 			break;
 		}
 	}
-	$j = $i;
+	$tmp = $i;
 	$i = 0;
 	$comment_data = array();
 	if ($len != 0) {
 		while ($i < $len && $comment[$i]['refer'] == -1) {
 			$comment_data[] = $comment[$i];
-			while ($j < $len && $comment[$j]['refer'] == $comment[$i]['id']) {
-				$comment_data[] = $comment[$j];
-				$j++;
+			for ($j = $tmp; $j < $len; $j++) {
+				if ($comment[$j]['refer'] == $comment[$i]['id']) {
+					$comment_data[] = $comment[$j];
+				}
 			}
 			$i++;
 		}
@@ -97,7 +98,11 @@ function addCommentAction() {
 			$refer = $_POST['refer'];
 		}
 		$product_id = $_GET['id'];
-		$customer_id = $_SESSION['id_customer'];
+		if (isset($_SESSION['is_login'])) {
+			// $customer_id = 0;
+		} else {
+			$customer_id = $_SESSION['id_customer'];
+		}
 		$comment = $_POST['comment'];
 		$create_date = date("d/m/Y",time());
 		insertComment($product_id, $customer_id, $comment, $create_date, $refer);

@@ -7,7 +7,7 @@ function construct() {
 function listAction() {
 
 	$data_tmp =  getAll();
-//phan trang
+	//phan trang
 	$page;
 	if(!empty($_GET['page'])){
 		$page = $_GET['page'];

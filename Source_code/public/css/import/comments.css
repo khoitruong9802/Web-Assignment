@@ -19,7 +19,15 @@
     border-radius: 10px;
 }
 
-.answer-comment-field {
+.admin-comment-field {
+    padding: 8px;
+    background: rgb(255,212,0);
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    /* border-color: gray; */
+}
+
+.comment-field {
     padding: 8px;
     background: #f8f8f8;
     border: 1px solid #dfdfdf;

@@ -86,13 +86,14 @@ function logoutAction() {
     unset($_SESSION['username']);
     unset($_SESSION['password']);
     unset($_SESSION['fullname']);
+    unset($_SESSION['password']);
     header('location:?modules=users&controller=index&action=login');
 
 }
 
 // đăng nhập tài khoản admin
 function loginAction() {
-
+    unset($_SESSION['id_customer']);
     $err = [];
     $username;
     $password;
