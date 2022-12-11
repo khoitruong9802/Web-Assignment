@@ -85,7 +85,7 @@
                             <td class="product-name">Fax: 1-714-252-0026<strong class="product-quantity"></strong></td>
                         </tr>
                         <tr class="order-total">
-                            <td><strong class="total-price">Email: smartshopPTN@gmail.com</strong></td>
+                            <td><strong class="total-price">Email: smartshopXL@gmail.com</strong></td>
                         </tr>
                     </tbody>
                     <tfoot>

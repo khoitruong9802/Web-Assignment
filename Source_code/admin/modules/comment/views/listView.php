@@ -52,8 +52,16 @@
                                 <tr>
                                     <td><input type="checkbox" name="checkItem" class="checkItem"></td>
                                     <td><span class="tbody-text"><?php echo $i; ?></h3></span>
-                                    <td><span class="tbody-text"><?php echo $value['username']; ?></span></td>
-                                    <td><span class="tbody-text"><?php echo $value['fullname']; ?></span></td>
+                                    <td><span class="tbody-text"><?php if ($value['username'] != '') {
+                                            echo $value['username'];
+                                        } else {
+                                            echo "admin";
+                                        }?></span></td>
+                                    <td><span class="tbody-text"><?php if ($value['fullname'] != '') {
+                                            echo $value['fullname'];
+                                        } else {
+                                            echo "Admin XL";
+                                        }?></span></td>
                                     <td><span class="tbody-text"><?php echo $value['code']; ?></span></td>
                                     <td><span class="tbody-text"><?php echo $value['name']; ?></span></td>
                                     <td ><span class="tbody-text"><?php echo $value['comment']; ?></span> </td>

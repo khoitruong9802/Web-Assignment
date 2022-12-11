@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>SMART SHOP PTN</title>
+    <title>SMART SHOP XL</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

@@ -11,7 +11,7 @@ function getAllComment()
 	`tbl_product`.`code`,
 	`tbl_product`.`name`
 	FROM `tbl_comment` 
-	INNER JOIN `tbl_customer` 
+	LEFT JOIN `tbl_customer` 
 	ON `tbl_customer`.`id` = `tbl_comment`.`customer_id`
 	INNER JOIN `tbl_product` 
 	ON `tbl_product`.`id` = `tbl_comment`.`product_id`");

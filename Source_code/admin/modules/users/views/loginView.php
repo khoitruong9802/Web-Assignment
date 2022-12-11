@@ -70,7 +70,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				<a href="?modules=users&controller=index&action=login">Go To Home</a>
 			</div>
 		<div class="copyright login-copyright">
-           <p>© 2022 PTN <a href="http://w3layouts.com/"></a></p>    
+           <p>© 2022 XL <a href="http://w3layouts.com/"></a></p>    
 		</div>
 </body>
 </html>

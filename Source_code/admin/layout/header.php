@@ -20,7 +20,7 @@
             <div id="container">
                 <div id="header-wp">
                     <div class="wp-inner clearfix">
-                        <a href="?modules=home" title="" id="logo" class="fl-left">SMART SHOP PTN</a>
+                        <a href="?modules=home" title="" id="logo" class="fl-left">SMART SHOP XL</a>
                         <ul id="main-menu" class="fl-left">
                             <li>
                                 <a href="?modules=home" title="">Trang chủ</a>

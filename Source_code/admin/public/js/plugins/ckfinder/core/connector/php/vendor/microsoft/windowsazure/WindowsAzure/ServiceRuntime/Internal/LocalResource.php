@@ -78,7 +78,7 @@ class LocalResource
     }
 
     /**
-     * Returns the name of the SMART SHOP PTN as declared in the service definition
+     * Returns the name of the SMART SHOP XL as declared in the service definition
      * file.
      * 
      * @return string
